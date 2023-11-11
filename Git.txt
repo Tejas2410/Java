@@ -1,0 +1,397 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Steps to upload on git and github from Vs code
+
+
+Step 1 -> write code in vscode
+
+Step 2 -> git init
+          git add .
+          git status
+          git commit -m "First commit"
+Step 3 -> make directory in github without readme and ncopy paste remaining code
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Git -> Distributed version control system
+
+version control -> Having that power to go back to that version
+
+
+-> 3 types of version control system:
+1. Local version System -> folder/file or create a database (everything is happening in my local machine)
+   ~~~~~~~~~~~~~~~~~~~~
+	Drawbacks -> machine stop working or if I have to collaborate with other people on a project
+
+2. Centralized version control system (CVCS) -> central remote repository
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Take the copy in your machine from cvcs and make changes and save it in cvcs
+
+Advantage -> everyone will have access of remote repository
+Disadvantage -> if central server stops working
+
+3. Distributed version control system : we will have a local copy and also entier commit history. we can collaborate with other 
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+colleague.
+
+Remote Repository -> Github , Gitlab
+~~~~~~~~~~~~~~~~
+
+
+
+-> 3 : Git Setup
+   ~~~~~~~~~~~~~
+
+   install git
+   In cmd  -> git --version
+
+
+C:\Users\tejas.hindurao.patil>git config --global user.name "Tejas"
+
+C:\Users\tejas.hindurao.patil>git config --global user.email "tejaspatiltp.1999@gmail.com"
+
+C:\Users\tejas.hindurao.patil>git config --global --list
+user.name=Tejas
+user.email=tejaspatiltp.1999@gmail.com
+
+-> 4 : Git Init
+   ~~~~~~~~~~~~
+
+PS C:\Users\tejas.hindurao.patil\Desktop\Telusko java\Algoprep> git --version
+git version 2.42.0.windows.2
+
+PS C:\Users\tejas.hindurao.patil\Desktop\Telusko java\Algoprep> git status
+fatal: not a git repository (or any of the parent directories): .git
+
+PS C:\Users\tejas.hindurao.patil\Desktop\Telusko java\Algoprep> git init -b main
+Initialized empty Git repository in C:/Users/tejas.hindurao.patil/Desktop/Telusko java/Algoprep/.git/
+
+PS C:\Users\tejas.hindurao.patil\Desktop\Telusko java\Algoprep> git status
+On branch main
+
+No commits yet
+
+-> 5 : Git Commit
+   ~~~~~~~~~~~~~~
+PS C:\Users\tejas.hindurao.patil\Desktop\Telusko java\Algoprep> git status
+On branch main
+
+No commits yet
+
+   Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .idea/
+        00_Practice/
+        64de6a6ce4b08b5282c144f1_original.pdf
+        CLass_13_Time_Complexity/
+        CLass_19_Binary_Search/
+        Class_10_2D_Arrays/
+        Class_11_Strings/
+        Class_14_HashMap/
+        Class_16_Recursion_1/
+        Class_17_Recursion_2/
+        Class_18_Sorting/
+        Class_1_Output_Input_Data_types/
+        Class_2_Data_types_and_Operators/
+        Class_3_If_Else/
+        Class_4_loop_01/
+        Class_5_loop_02/
+        Class_6.1_Extra_function/
+        Class_6_Patterns/
+        Class_7_Intro_to_prob_sol/
+        Class_8_Arrays_1/
+        Class_9_Arrays_2/
+
+
+[
+   Working Directory -> where we write code
+   local Directory (git) -> git handle and track file (git is installed in our machine)
+]
+
+To add file from working directory to staging state : git add Filename eg. git add hello.txt or git add all ( git add . )
+                                      ~~~~~~~~~~~~~                                                           ~~~~~~~~~
+
+To see all the commits history : git log
+               ~~~~~~~~~~~~~~~
+
+To commit with msg : git commit -m "Message"
+   ~~~~~~~~~~~~~~~
+
+-> 6 : Skipping Staging Area
+   ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   usual git flow -> refer image 1 -> working directory -> staging area (local directory) -> git commit
+                     ~~~~~~~~~~~~~
+
+git commit -a -m "Second Commit"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-a -> skip stating area (move file from working directory to commit)
+
+
+-> 7 : Git diff
+   ~~~~~~~~~~~~
+
+   Shows the changes done in the code -> git diff
+
+PS C:\Users\tejas.hindurao.patil\Desktop\Telusko java\Algoprep> git diff
+                                                                ~~~~~~~~~
+diff --git a/Class_6.1_Extra_function/nCr_02.java b/Class_6.1_Extra_function/nCr_02.java
+index 7dadcc7..16b96d9 100644
+
+ // nCr = n! / r! * (n - r)!
+-// nPr = n! / (n - r)!
+-//kkkkkkkk
+~~~~~~~~~~~~ Changes done
+\ No newline at end of file
+
+
+-> 8 : Git Remove Files
+   ~~~~~~~~~~~~~~~~~~~~
+
+   Step 1 -> Make file untraked -> git rm --cached Readme.md 
+   Step 2 -> Delete the file Manually from workin directory
+
+
+-> 9 : Github Repository
+   ~~~~~~~~~~~~~~~~~~~~~
+
+   Remote Repository to collab with others globally
+
+   -> To Download Linix code from remote repo to our system
+
+      git clone https://github.com/torvalds/linux.git
+
+   CTRL + C -> cancel the download
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   git init -> create local repo in our machine
+
+   Now we are creating remote repo in github
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+C:\Users\tejas.hindurao.patil>cd Desktop
+                              ~~~~~~~~~~
+
+C:\Users\tejas.hindurao.patil\Desktop>mkdir learn-git
+                                      ~~~~~~~~~~~~~~~
+
+C:\Users\tejas.hindurao.patil\Desktop>cd learn-git
+                                      ~~~~~~~~~~~~
+
+C:\Users\tejas.hindurao.patil\Desktop\learn-git>echo "# learn-git demo" >> Readme.md
+                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+C:\Users\tejas.hindurao.patil\Desktop\learn-git>dir
+                                                ~~~
+ Volume in drive C is Windows
+ Volume Serial Number is A28C-CA5B
+
+ Directory of C:\Users\tejas.hindurao.patil\Desktop\learn-git
+
+10/22/2023  11:42 AM    <DIR>          .
+10/22/2023  11:41 AM    <DIR>          ..
+10/22/2023  11:42 AM                21 Readme.md
+               1 File(s)             21 bytes
+               2 Dir(s)  70,835,662,848 bytes free
+
+C:\Users\tejas.hindurao.patil\Desktop\learn-git>git status
+                                                ~~~~~~~~~~
+fatal: not a git repository (or any of the parent directories): .git
+
+C:\Users\tejas.hindurao.patil\Desktop\learn-git>git init
+                                                ~~~~~~~~
+Initialized empty Git repository in C:/Users/tejas.hindurao.patil/Desktop/learn-git/.git/
+
+C:\Users\tejas.hindurao.patil\Desktop\learn-git>git status
+                                                ~~~~~~~~~~
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Readme.md
+
+C:\Users\tejas.hindurao.patil\Desktop\learn-git>git add Readme.md
+                                                ~~~~~~~~~~~~~~~~~
+
+C:\Users\tejas.hindurao.patil\Desktop\learn-git>git status
+                                                ~~~~~~~~~~
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   Readme.md
+
+
+C:\Users\tejas.hindurao.patil\Desktop\learn-git>git commit -m "first commit"
+                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[master (root-commit) 8b973f8] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Readme.md
+
+C:\Users\tejas.hindurao.patil\Desktop\learn-git>git branch -M main
+                                                ~~~~~~~~~~~~~~~~~~
+
+(ssh step do only one time for a system)
+C:\Users\tejas.hindurao.patil\Desktop\learn-git>ssh-keygen -o
+                                                ~~~~~~~~~~~~~
+Generating public/private rsa key pair.
+Enter file in which to save the key (C:\Users\tejas.hindurao.patil/.ssh/id_rsa):
+Created directory 'C:\Users\tejas.hindurao.patil/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in C:\Users\tejas.hindurao.patil/.ssh/id_rsa.
+Your public key has been saved in C:\Users\tejas.hindurao.patil/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:mu/B9tnZu0OHDP/tbVLDopIhtsGZX3LBfQnuSxsOT1g dir\tejas.hindurao.patil@M7-LX-CGGXD63
+The key's randomart image is:
++---[RSA 3072]----+
+|                 |
+|             .   |
+|          . o . .|
+|           o.E o |
+|      . S   =+o. |
+|       @ o = *=oo|
+|      + O * B.=+o|
+|       + * + Bo =|
+|       .o + o +Bo|
++----[SHA256]-----+
+
+C:\Users\tejas.hindurao.patil\Desktop>cd ..
+
+C:\Users\tejas.hindurao.patil>dir
+ Volume in drive C is Windows
+ Volume Serial Number is A28C-CA5B
+
+ Directory of C:\Users\tejas.hindurao.patil
+
+10/22/2023  11:54 AM    <DIR>          .
+05/30/2023  10:44 AM    <DIR>          ..
+06/12/2023  12:58 AM    <DIR>          .android
+12/29/2022  12:13 PM    <DIR>          .cache
+07/02/2023  12:21 AM    <DIR>          .dotnet
+12/29/2022  12:13 PM    <DIR>          .eclipse
+10/20/2023  03:50 PM                58 .gitconfig
+12/27/2022  12:36 PM    <DIR>          .hdb
+10/20/2023  05:18 PM                20 .lesshst
+08/28/2023  12:41 PM    <DIR>          .p2
+10/22/2023  11:55 AM    <DIR>          .ssh
+                                       ~~~~
+07/02/2023  01:00 AM    <DIR>          .templateengine
+07/15/2023  11:08 PM    <DIR>          .vscode
+12/02/2022  05:13 PM    <DIR>          3D Objects
+12/12/2022  08:54 AM    <DIR>          Contacts
+10/22/2023  11:41 AM    <DIR>          Desktop
+09/05/2023  02:01 PM    <DIR>          Documents
+10/22/2023  10:23 AM    <DIR>          Downloads
+07/28/2023  06:08 PM    <DIR>          dwhelper
+12/27/2022  05:20 PM    <DIR>          eclipse
+12/29/2022  12:13 PM    <DIR>          eclipse-workspace
+12/12/2022  08:54 AM    <DIR>          Favorites
+12/27/2022  04:53 PM    <DIR>          hdbstudio
+12/12/2022  08:54 AM    <DIR>          Links
+12/12/2022  08:54 AM    <DIR>          Music
+12/15/2022  03:15 PM    <DIR>          OneDrive
+10/22/2023  09:54 AM    <DIR>          OneDrive - Accenture
+07/19/2023  05:48 PM    <DIR>          Oracle
+01/02/2023  11:39 AM    <DIR>          Pictures
+12/27/2022  12:34 PM    <DIR>          sap
+12/12/2022  08:54 AM    <DIR>          Saved Games
+12/12/2022  08:54 AM    <DIR>          Searches
+12/23/2022  10:46 AM    <DIR>          Videos
+               2 File(s)             78 bytes
+              31 Dir(s)  69,269,037,056 bytes free
+
+C:\Users\tejas.hindurao.patil>cd .ssh
+
+C:\Users\tejas.hindurao.patil\.ssh>dir
+ Volume in drive C is Windows
+ Volume Serial Number is A28C-CA5B
+
+ Directory of C:\Users\tejas.hindurao.patil\.ssh
+
+10/22/2023  11:55 AM    <DIR>          .
+10/22/2023  11:54 AM    <DIR>          ..
+10/22/2023  11:55 AM             2,635 id_rsa
+10/22/2023  11:55 AM               593 id_rsa.pub
+               2 File(s)          3,228 bytes
+               2 Dir(s)  69,268,914,176 bytes free
+
+C:\Users\tejas.hindurao.patil\.ssh>cs id_rsa.pub
+'cs' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\tejas.hindurao.patil\.ssh>type id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDBMse5bLNh44TGEYCR1FqVOx0H5WNxo+elMIY7qmB+a+qq/HUisxkwKB9THyw3eWzsoV6FPnJ15vGnDrKPV0BNPSfW03yLQDos2L62XxFbQ/iSnzLCFlGaBVY8Eg5u04jLU1j3fKi05AcS5DjENLdtO26yR/YDbl6VSMc+bMd0nRr61mWxfZA0y+MZo+0CWIBFWRPdC8rULg53CM6AouRbfs7hobjKHf6TRoPmyuuwI+inIVaVoWjgnRO+jN/WQ7yseLpSLxPgBKzeB4HGv2+69u0is3fB/2aMEUEHx3Csljo4Dxsb5idIopeD6P1re4Se/nh/4S/FAV/Zl1HtF4qGtRzoOc/2LwMvYUtoBQnYEtA8jtKs48TW+I+zPgwwjmb40xGqGsnTUqfLXw5RnY90AxSEsQLx7jtK5w2se/WE9GnoLprxoceHSghHB3a8Uud8PgA1I7LqBGtCiK6G6VhUR5dX+naVolFNnFNDyjgztFmncOlU/MZYlDtnsSCaZHk= dir\tejas.hindurao.patil@M7-LX-CGGXD63
+
+
+Go to github profile settings
+
+In ssh key and gpg keys add above key in ssh keys
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+C:\Users\tejas.hindurao.patil\.ssh>cd ..
+
+C:\Users\tejas.hindurao.patil>cd Desktop
+
+C:\Users\tejas.hindurao.patil\Desktop>cd learn-git
+
+C:\Users\tejas.hindurao.patil\Desktop\learn-git>dir
+ Volume in drive C is Windows
+ Volume Serial Number is A28C-CA5B
+
+ Directory of C:\Users\tejas.hindurao.patil\Desktop\learn-git
+
+10/22/2023  11:44 AM    <DIR>          .
+10/22/2023  11:41 AM    <DIR>          ..
+10/22/2023  11:42 AM                21 Readme.md
+               1 File(s)             21 bytes
+               2 Dir(s)  70,759,804,928 bytes free
+
+-> copy paste from after making github repo
+
+C:\Users\tejas.hindurao.patil\Desktop\learn-git>git remote add origin git@github.com:Tejas2410/learn-git.git
+                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+C:\Users\tejas.hindurao.patil\Desktop\learn-git>git push -u origin main
+                                                ~~~~~~~~~~~~~~~~~~~~~~~
+The authenticity of host 'github.com (20.207.73.82)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 233 bytes | 11.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Tejas2410/learn-git.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+C:\Users\tejas.hindurao.patil\Desktop\learn-git>
+
+
+10 -> Adding Files to remote Repository
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+
+

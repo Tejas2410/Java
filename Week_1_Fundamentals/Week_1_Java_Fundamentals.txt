@@ -1,0 +1,108 @@
+
+-> Fundamentals of programming
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   1. Fundamentals
+   ~~~~~~~~~~~~~~~
+
+   CPU/Processor is the brain of the computer
+   Processor uses semicondictor technology (any device which uses concept of  transistor , capacitor is called as semiconductor technology device (very fast in execution))
+
+   transistor are involved in manufacturing processor that are of two type npn and pnp which understand either low voltage(0V) or high voltage(5V)
+
+   Computer can understand 0/1 binary numbers
+
+   Set of all instruction is program
+
+   Writing program in binary that machine understand is called as machine level language(MLL).
+
+   Writing program in the form of nemonics (Add, Sub ,Mul ,Div) is called as assembly level language(ALL)
+   (Assembler will covert ALL to MLL)
+
+   Writing program in symbols and english like command is called as high level language(HLL).
+   (Compiler will convert HLL to MLL)
+
+
+   2. Memory Unit In a Computer
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Refer Image 1 & 2 -> imp
+   ~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Hard Disk Drive -> Ram -> cache memory -> Processor
+
+   HDD is use  to store data permanetly , it is slower than other memmory unit
+
+   Ram is faster than hdd but it is volatile means even for a fraction of second power is lost all data will be lost
+
+   cache memory (small memory in kb or few mb) stores frequently requested data (os decides)
+
+
+   3. Platform And Platform Dependency
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   
+            -> Hardware -> processor
+   Platform 
+            -> Software -> OS (Windows , Mac , Linux)
+
+
+   Refer Image 3
+   ~~~~~~~~~~~~~
+
+   Platform Dependency 
+
+   Ex: C language Program when developed on windows and compiled covert into HLL (Binary code) 
+
+       This application exe file when uploaded on internet only windows platform will able to execute the file cos of architecture platform dependency (refer image).
+
+
+   4. How Java Made  Platform Independent
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   refer image 4
+   ~~~~~~~~~~~~~
+
+   java program (HLL) -> compiler -> byte code (intermediate level code) -> jvm (interpreter) -> binary code (MLL)
+                                       Platform Independent                 Platform Dependent
+
+   In java everything should be in object and to create object we need class.
+
+   Refer Image -> How java works
+
+
+
+   5. Datatypes
+   ~~~~~~~~~~~~
+
+               Range -> 1 byte -> -2^7 to 2^7 - 1 (-128 to 127)
+
+   Primitive -> Integer -> byte (1byte), short (2 byte) , int (4 byte), long (8 byte)
+                Float -> float (4 byte) (6-7 decimal point)  , double ( byte ) -> default value 14-15 decimal point
+                Character -> char (2 byte) (unicode has bigger range)
+                Boolean -> boolean (true or false)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

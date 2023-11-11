@@ -1,0 +1,283 @@
+
+Object Oriented Programming (OOPs):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Introduction to OOPs: 
+---------------------
+
+oops -> used to map -> real world entity -> code
+
+The following are the few concepts existed in OOPs
+
+1) classes & objects
+2) abstraction
+3) encapsulation
+4) data hiding
+5) inheritance
+6) polymorphism
+7) message passing etc
+
+class:
+------
+==> It is an OOP principle.
+==> It is a container in Java.
+==> Variables, Blocks, Methods, Constructors etc
+==> It is called as template or blue print or format.
+
+syntax:
+-------
+class ClassName
+{
+    variables
+    methods
+    blocks
+    classes
+    etc
+}
+
+Ex:
+---
+Test.java -------> driver code ------> compilation ----> Test.class
+Student.java ----> Student related --> compilation ----> Student.class
+Product.java ----> Product info -----> compilation ----> Product.class
+
+
+Object:
+-------
+==> It is physical entity.
+==> It is a tool to access the data present inside a class.
+==> It acts as an inteface between class and object.
+==> we can create object for any class by using the following syntax
+
+syntax1: ClassName refName; ---------------------> ref / temp object
+syntax2: ClassName objName = new ClassName(); ---> actual obj
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-> jdk jvm jre
+
+java development kit is required to compile the java code. (first layar)
+
+jvm is inside jre which converts byte code in MLL using interpreter inside jvm we execute the code. (second layer)
+
+jre has all the inbuild clas and library also jre validates byte code. (third layer)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Methods:
+--------
+==> It is self contained block of statements.
+==> It is also called as function, but if we declare within class then it is called as a method.
+==> we can access methods by using object of that class.
+==> we can call this method any number of times based on our req.
+==> code reusability is the main advantage of methods.
+==> the following syntax is used to declare a method in java.
+
+
+types of methods based on definition:
+-------------------------------------
+On the basis of definition of method all the methods are classified into two types
+
+1) predefined methods (java library contains)
+2) userdefined methods (programmer have to create)
+
+
+Ex:
+---
+class Test 
+{
+    public static void main(String[] args) 
+    {
+        String s = "prakash";
+        System.out.println(s.length());//7
+        System.out.println(s.toUpperCase());//PRAKASH
+    }
+}
+
+
+syntax:
+-------
+return_type method_name(arguments/parameters/inputs)
+{
+    ----------------
+    ----------------
+    ----------------
+    return value(s);
+}
+
+return_type indicates the type of value that we are returing
+method_name indicates name of the method for identification purpose
+args indicates inputs for the method
+body indicates business logic
+return indicates we are returning final result
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+instance data:
+--------------
+If the data is changing from obj to obj, then such type of data is called as instance data. we are not required to use any keyword to declare instance data.
+
+Ex: name, mobile_num, aadhar, email etc
+
+Instance data is divided into the following types....
+
+1) instance variable
+2) instance methods
+3) instance block
+
+static data:
+------------
+If the data is not chaning from obj to obj and shared by all objects , then such type of data is called as static data. we can declare static data by using 'static' keyword.
+
+Ex: college_name, country_name etc
+
+static data is divided into the following types....
+
+1) static variable
+2) static methods
+3) static block
+
+instance variable
+-----------------
+if the content of variable is changing from object to object, then such type of variables are called as instance variables, we can declare instance variables inside the class without using any keyword.
+
+Ex:
+---
+class Demo
+{
+    int i;
+}
+class Test 
+{
+    public static void main(String[] args) 
+    {
+        Demo obj1 = new Demo();
+        Demo obj2 = new Demo();
+        Demo obj3 = new Demo();
+        Demo obj4 = new Demo();
+
+        obj1.i = 111;
+        obj2.i = 222;
+        obj3.i = 333;
+        obj4.i = 444;
+
+        System.out.println(obj1.i);//111
+        System.out.println(obj2.i);//222
+        System.out.println(obj3.i);//333
+        System.out.println(obj4.i);//444
+    }
+}
+
+
+
+C:\test>javac Test.java
+
+C:\test>java Test
+111
+222
+333
+444
+
+static variable
+---------------
+if the content of variable is not changing from object to object but it is shared by all the objects , then such type of variables are called as static variables, we can declare static variables inside the class by using 'static' keyword.
+
+Ex:
+---
+class Demo
+{
+    static int j;
+}
+class Test 
+{
+    public static void main(String[] args) 
+    {
+        Demo obj1 = new Demo();
+        Demo obj2 = new Demo();
+        Demo obj3 = new Demo();
+        Demo obj4 = new Demo();
+
+        obj1.j = 777;
+        obj4.j = 999;
+
+        System.out.println(obj1.j);//999
+        System.out.println(obj2.j);//999
+        System.out.println(obj3.j);//999
+        System.out.println(obj4.j);//999
+    }
+}
+
+
+C:\test>javac Test.java
+
+C:\test>java Test
+999
+999
+999
+999
+
+instance methods:
+-----------------
+It is used to access both instance variables and static variables.
+
+static methods:
+---------------
+It is used to access only static variables.
+
+Ex:
+---
+class Demo
+{
+    int i;//instance var
+    static int j; //static var
+
+    void show_ij()
+    {
+        System.out.println("i: "+i+" and j: "+j);
+    }
+
+    static void show_j()
+    {
+        System.out.println("j: "+j);
+    }
+}
+class Test 
+{
+    public static void main(String[] args) 
+    {
+        Demo obj1 = new Demo();
+        Demo obj2 = new Demo();
+        Demo obj3 = new Demo();
+        Demo obj4 = new Demo();
+
+        obj1.i = 111;
+        obj2.i = 222;
+        obj3.i = 333;
+        obj4.i = 444;
+
+        obj1.j = 999;
+
+        obj1.show_ij();//111 999
+        obj2.show_ij();//222 999
+        obj3.show_ij();//333 999
+        obj4.show_ij();//444 999
+
+        Demo.show_j();//999
+    }
+}
+
+
+C:\test>javac Test.java
+
+C:\test>java Test
+i: 111 and j: 999
+i: 222 and j: 999
+i: 333 and j: 999
+i: 444 and j: 999
+j: 999
+
+Note: 
+-----
+Instance data we can access by using only object of that class.
+Static data we can access by using either obj or class name.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
